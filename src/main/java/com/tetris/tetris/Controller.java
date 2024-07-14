@@ -9,7 +9,7 @@ public class Controller {
     public static final int YMAX = Tetris.YMAX;
     public static int [][] MESH = Tetris.MESH;
 
-    public static void MoveRigth(Form form){
+    public static void MoveRight(Form form){
         if(form.a.getX() + MOVE <=XMAX - SIZE && form.b.getX() + MOVE <= XMAX - SIZE
            && form.c.getX() + MOVE <= XMAX - SIZE && form.d.getX() + MOVE <= XMAX - SIZE){
             int moveA = MESH[((int ) form.a.getX() / SIZE)+1][((int) form.a.getY()/ SIZE)];
@@ -44,80 +44,69 @@ public class Controller {
     }
 
     //create the stones
-    public static Form makeRect(){
-            //random Color for the stones
-
-        int block =(int) (Math.random()*100);
+    public static Form makeRect() {
+        int block = (int) (Math.random() * 100);
         String name;
-
-        Rectangle a = new Rectangle(SIZE-1, SIZE-1),
-                b=  new Rectangle(SIZE-1, SIZE-1),
-                c= new Rectangle(SIZE-1, SIZE-1),
-                d=new Rectangle(SIZE-1, SIZE-1);
-
-        if(block < 15 ){
-            a.setX(XMAX /2 - SIZE);
-            b.setX(XMAX /2 - SIZE);
+        Rectangle a = new Rectangle(SIZE-1, SIZE-1), b = new Rectangle(SIZE-1, SIZE-1), c = new Rectangle(SIZE-1, SIZE-1),
+                d = new Rectangle(SIZE-1, SIZE-1);
+        if (block < 15) {
+            a.setX(XMAX / 2 - SIZE);
+            b.setX(XMAX / 2 - SIZE);
             b.setY(SIZE);
-            c.setX(XMAX/2);
+            c.setX(XMAX / 2);
             c.setY(SIZE);
             d.setX(XMAX / 2 + SIZE);
             d.setY(SIZE);
             name = "j";
-        } else if (block< 30) {
-            a.setX(XMAX /2 + SIZE);
-            b.setX(XMAX /2 - SIZE);
+        } else if (block < 30) {
+            a.setX(XMAX / 2 + SIZE);
+            b.setX(XMAX / 2 - SIZE);
             b.setY(SIZE);
-            c.setX(XMAX/2);
+            c.setX(XMAX / 2);
             c.setY(SIZE);
             d.setX(XMAX / 2 + SIZE);
             d.setY(SIZE);
             name = "l";
         } else if (block < 45) {
-            a.setX(XMAX /2 - SIZE);
-            b.setX(XMAX /2);
-            b.setY(SIZE /2 - SIZE);
+            a.setX(XMAX / 2 - SIZE);
+            b.setX(XMAX / 2);
+            c.setX(XMAX / 2 - SIZE);
             c.setY(SIZE);
-            d.setX(XMAX / 2 );
+            d.setX(XMAX / 2);
             d.setY(SIZE);
             name = "o";
         } else if (block < 60) {
-            a.setX(XMAX /2 + SIZE);
-            b.setX(XMAX /2);
-            b.setY(SIZE /2 );
+            a.setX(XMAX / 2 + SIZE);
+            b.setX(XMAX / 2);
+            c.setX(XMAX / 2);
             c.setY(SIZE);
-            d.setX(XMAX / 2  - SIZE);
+            d.setX(XMAX / 2 - SIZE);
             d.setY(SIZE);
             name = "s";
-
         } else if (block < 75) {
-            a.setX(XMAX /2 - SIZE);
-            b.setX(XMAX /2);
-            b.setY(SIZE /2 );
+            a.setX(XMAX / 2 - SIZE);
+            b.setX(XMAX / 2);
+            c.setX(XMAX / 2);
             c.setY(SIZE);
-            d.setX(XMAX / 2  + SIZE);
-            d.setY(SIZE);
+            d.setX(XMAX / 2 + SIZE);
             name = "t";
         } else if (block < 90) {
-            a.setX(XMAX /2 + SIZE);
-            b.setX(XMAX /2 );
-            b.setY(SIZE /2  + SIZE);
+            a.setX(XMAX / 2 + SIZE);
+            b.setX(XMAX / 2);
+            c.setX(XMAX / 2 + SIZE);
             c.setY(SIZE);
-            d.setX(XMAX / 2  + SIZE + SIZE);
+            d.setX(XMAX / 2 + SIZE + SIZE);
             d.setY(SIZE);
             name = "z";
-        } else{
-            a.setX(XMAX /2 - SIZE -  SIZE);
-            b.setX(XMAX /2 - SIZE);
-            b.setY(SIZE /2 );
-            d.setX(XMAX / 2  + SIZE);
-
+        } else {
+            a.setX(XMAX / 2 - SIZE - SIZE);
+            b.setX(XMAX / 2 - SIZE);
+            c.setX(XMAX / 2);
+            d.setX(XMAX / 2 + SIZE);
             name = "i";
         }
-
-        return new Form(a,b,c,d,name);
+        return new Form(a, b, c, d, name);
     }
-
 
 
 
