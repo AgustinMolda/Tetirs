@@ -23,6 +23,10 @@ public class Tetris extends Application {
     private static Form nextObj = Controller.makeRect();
     private static int linesNo = 0;
 
+    //Create Scene and start the gamepu
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     public void start(Stage stage) throws Exception {
